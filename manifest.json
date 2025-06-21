@@ -1,0 +1,21 @@
+{
+    "manifest_version" : 3,
+    "name" : "AfterTheContest",
+    "version" : "0.0.1",
+    "description" : "Solution tab, Where users can post their solution + AI generated Hints for problems",
+    "permissions" : ["storage" ],
+    "host_permissions" : ["http://localhost:8080/"],
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+    "action" :{
+        "default_popup" : "solutions.html"
+    },
+    "content_scripts": [
+    {
+      "matches": ["https://codeforces.com/problemset/problem/*" , "https://codeforces.com/contest/*/problem/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
